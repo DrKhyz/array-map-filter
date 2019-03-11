@@ -16,7 +16,10 @@ Exemple d'entrée:
  */
 
 function getMultiplesOf(numbers, n) {
-}
+  return numbers.filter(function (x){
+    return x%n==0;
+})}
 
+// console.log(getMultiplesOf(numbers, n))
 // Ne pas modifier l'export
 module.exports = getMultiplesOf;

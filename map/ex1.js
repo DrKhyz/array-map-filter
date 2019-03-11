@@ -22,8 +22,8 @@ En sortie: [
  */
 
 function getStringsLength(strings) {
-  strings.map(function(x){
-      return console.log(x + ' contains ' + x.length + ' characters');
+  return strings.map(function(x){
+      return x + ' contains ' + x.length + ' characters';
   })
 }
 
