@@ -25,6 +25,12 @@ Sortie attendue:
 */
 
 function getCampusesTeachingReact(campuses) {
+  const regex = new RegExp('JS/React','i')
+    return campuses.filter(item => {
+      return regex.test(item.curriculums)
+    }).map(campuses => {
+      return campuses.city
+  })
 }
 
 module.exports = getCampusesTeachingReact;
