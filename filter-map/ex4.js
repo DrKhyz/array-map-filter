@@ -65,23 +65,39 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 
 function getActivitiesMembers(activities, persons) {
   return activities.map(activitie => {
-    return persons.map(person =>{
-      const regex = new RegExp(activitie,'i');
-      let people = regex.test(person.activities);
+    let group = [];
+    let obj = {};
 
-      return obj = {
-        ["activity"]:activitie,
-        ["persons"]: people
-      };
-    })
+    obj.activity = activitie;
+    obj.persons = group;
+    const regex = new RegExp(activitie, 'i');
+    persons
+      .filter(person => {
+        return regex.test(person.activities);
+      })
+      .map(person => {
+        group.push(person.name);
+      });
 
-
-  })
-
-
+    return obj;
+  });
 }
-
-
 
 // Ne pas modifier l'export
 module.exports = getActivitiesMembers;
+
+// CA MARCHE PAAAAAAAAAAAAAAAAAAAAAS
+// function getActivitiesMembers(activities, persons) {
+//   return activities.map(activitie => {
+//     const regex = new RegExp(activitie, 'i');
+//     let asActi = regex.test(persons.activitie);
+//     let people = [];
+//     if (asActi) {
+//       people.push(persons.name);
+//     }
+//     return (obj = {
+//       ['activity']: activitie,
+//       ['persons']: people
+//     });
+//   });
+// }

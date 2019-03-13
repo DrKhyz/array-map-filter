@@ -51,14 +51,16 @@ Sortie attendue:
 */
 
 function getStudentsPerCurriculum(campuses, curriculumName) {
-  const regex = new RegExp(curriculumName,'i');
-  return campuses.filter(item => {
-    return regex.test(item.curriculums[0].name)
-  }).map(campuses => {
-    let num = campuses.curriculums[0].numStudents ;
-    let town = campuses.city;
-    return obj = {[town]:num};
-  })
+  const regex = new RegExp(curriculumName, 'i');
+  return campuses
+    .filter(item => {
+      return regex.test(item.curriculums[0].name);
+    })
+    .map(campuses => {
+      let num = campuses.curriculums[0].numStudents;
+      let town = campuses.city;
+      return (obj = { [town]: num });
+    });
 }
 
 module.exports = getStudentsPerCurriculum;
