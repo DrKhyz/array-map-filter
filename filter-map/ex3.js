@@ -58,7 +58,7 @@ function getStudentsPerCurriculum(campuses, curriculumName) {
     let num = campuses.curriculums[0].numStudents ;
     let town = campuses.city;
     return obj = {[town]:num};
-})
+  })
 }
 
 module.exports = getStudentsPerCurriculum;

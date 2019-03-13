@@ -64,6 +64,21 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 */
 
 function getActivitiesMembers(activities, persons) {
+  return activities.map(activitie => {
+    return persons.map(person =>{
+      const regex = new RegExp(activitie,'i');
+      let people = regex.test(person.activities);
+
+      return obj = {
+        ["activity"]:activitie,
+        ["persons"]: people
+      };
+    })
+
+
+  })
+
+
 }
 
 
